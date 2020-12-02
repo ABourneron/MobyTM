@@ -1,21 +1,17 @@
-<!-- <div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <h2>Mes mobs</h2>
-      <div class="col-md-4">
-        <app-mob *ngFor="let mobs of mobs" [mobName]="mobs.name" [mobStatus]="mobs.status" [mobDesc]="mobs.desc"></app-mob>
-      </div>
-    </div>
-  </div>
-</div>
- -->
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+    <img src="/assets/img/MobyWEB.svg" width="40" height="40" class="d-inline-block align-top" alt="">
+    <a class="navbar-brand pl-2" href="#">MobyWEB™</a>
+  </a>
+</nav>
 <div class="container">
-  <div class="alert alert-info" role="alert">
+  <div class="alert alert-dark" role="alert">
     Ceci est un bandeau d'info !
   </div>
-  <h2>Mes mobs</h2>
+  <h2>Les mobylettes</h2>
   <div class="card-deck row-cols-md-3">
-    <app-mob *ngFor="let mobs of mobs" [mobName]="mobs.name" [mobStatus]="mobs.status" [mobDesc]="mobs.desc">
+    <app-mob *ngFor="let mobs of mobs" [mobName]="mobs.name" [mobStatus]="mobs.status" [mobDesc]="mobs.desc"
+      [mobPrice]="mobs.price">
     </app-mob>
   </div>
 </div>

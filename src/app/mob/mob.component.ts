@@ -10,6 +10,7 @@ export class MobComponent implements OnInit {
   @Input() mobName: string = "";
   @Input() mobStatus: string = "";
   @Input() mobDesc: string = "";
+  @Input() mobPrice: string = "";
 
   constructor() { }
 
