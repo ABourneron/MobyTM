@@ -17,4 +17,6 @@ export class FicheComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  
 }
+

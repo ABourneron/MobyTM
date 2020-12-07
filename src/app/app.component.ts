@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
   isAuth = false;
   lastUpdate = new Promise((resolve, reject) => {
@@ -42,6 +43,7 @@ export class AppComponent {
       price : '10€/j'
     }
   ];
+
 
   constructor() {
   }

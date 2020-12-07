@@ -3,22 +3,22 @@
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Peugeot_Cyclomoteur_BB_%281957%29.jpg/800px-Peugeot_Cyclomoteur_BB_%281957%29.jpg"
         alt="Erreur iamge">
     <div class="card-body">
-        <h5 class="card-title">{{ mobName }}</h5>
-        <p class="card-text">{{ mobDesc}}</p>
+        <h2>{{ mobName }}</h2>
+        <p>{{ mobDesc}}</p>
 
         <div class="row">
             <div class="col">
-                <span class="badge" [ngClass]="{
+                <h4><span class="badge" [ngClass]="{
                         'badge-danger':   mobStatus === 'Indisponible',
                         'badge-success':  mobStatus === 'Disponible',
                         'badge-default':  mobStatus === 'En attente' }">
-                    {{ mobStatus }}</span>
+                    {{ mobStatus }}</span></h4>
             </div>
-            <div class="col text-right">
+            <h4>
                 <span class="card-text font-weight-bold">{{ mobPrice}}</span>
-            </div>
+            </h4>
         </div>
 
     </div>
-    <a href="#" class="btn btn-dark stretched-link">Réserver</a>
+    <button mat-flat-button color="primary">Réserver</button>
 </div>
