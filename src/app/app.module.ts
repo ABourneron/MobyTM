@@ -13,20 +13,25 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon'; 
 import {MatButtonModule} from '@angular/material/button';
 import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatInputModule} from '@angular/material/input'; 
+import {MatInputModule} from '@angular/material/input';
+import { AccueilComponent } from './accueil/accueil.component'; 
 
 
 const appRoutes: Routes = [
-  { path: 'fiche', component: FicheComponent },
-  { path: '', component: MobComponent }
+  {path : '', component:MobComponent},
+  {path : 'fiche', component:FicheComponent},
+  {path : 'connexion', component:ConnexionComponent},
 ];
 
 @NgModule({
-  declarations: [
+   declarations: [
     AppComponent,
     MobComponent,
     FicheComponent,
-    ConnexionComponent
+    ConnexionComponent,
+    AccueilComponent,
+    
+    
   ],
   imports: [
     BrowserModule,

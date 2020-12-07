@@ -1,20 +1,16 @@
 <mat-toolbar color="primary">
-  <img src="/assets/img/MobyWEB.svg" width="40" height="40">
-  <h1>MobyWEB™</h1>
+  <a routerLink="/">
+    <img src="/assets/img/MobyWEB.svg" width="40" height="40" />
+    <span style="margin-left: 20px; ">MobyWEB™</span>
+  </a>
+  
+
+
+
   <span class="example-spacer"></span>
-  <button mat-icon-button class="material-icons" aria-label="Example icon-button with menu icon">
+  <button mat-icon-button class="material-icons" aria-label="Example icon-button with menu icon" routerLink="/connexion"
+    routerLinkActive="active">
     <mat-icon>account_circle</mat-icon>
   </button>
 </mat-toolbar>
-
-  <!-- Ceci constitue le corp de la page -->
-  <!-- <app-fiche></app-fiche> -->
-<app-connexion></app-connexion>
-
-<!-- <h1>Les mobylettes</h1>
-  <div class="card-deck row-cols-md-3">
-    <app-mob *ngFor="let mobs of mobs" [mobName]="mobs.name" [mobStatus]="mobs.status" [mobDesc]="mobs.desc"
-      [mobPrice]="mobs.price">
-    </app-mob>
-  </div>
-</div> -->
+<router-outlet></router-outlet>
