@@ -1,16 +1,20 @@
-<mat-toolbar color="primary">
-  <a routerLink="/">
-    <img src="/assets/img/MobyWEB.svg" width="40" height="40" />
-    <span style="margin-left: 20px; ">MobyWEB™</span>
-  </a>
-  
 
+<mat-sidenav-container>
+  <mat-sidenav #right position="end" [(opened)]="opened"></mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <a routerLink="/">
+        <img src="/assets/img/MobyWEB.svg" width="40" height="40" />
+        <span style="margin-left: 20px; ">MobyWEB™</span>
+      </a>
 
+      <span class="example-spacer"></span>
+      <button mat-icon-button color="accent" class="material-icons" aria-label="Example icon-button with menu icon" routerLink="/connexion"
+              routerLinkActive="active" (click)="opened=!opened">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
 
-  <span class="example-spacer"></span>
-  <button mat-icon-button class="material-icons" aria-label="Example icon-button with menu icon" routerLink="/connexion"
-    routerLinkActive="active">
-    <mat-icon>account_circle</mat-icon>
-  </button>
-</mat-toolbar>
-<router-outlet></router-outlet>

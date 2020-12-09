@@ -17,7 +17,9 @@ export class AppComponent {
     );
   });
 
+  opened = false;
 
+  
 
 
   constructor() {

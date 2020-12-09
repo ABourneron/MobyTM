@@ -9,21 +9,24 @@
 // Be sure that you only ever include this mixin once!
 @include mat-core();
 
+$md-palettetestsecu: ( 50 : #36373c, 100 : #3beda5, 200 : #dadeff, 300 : #e63e39, 400 : #43c9e0, 500 : #36373c, 600 : #303136, 700 : #292a2e, 800 : #222327, 900 : #16161a, A100 : #6969f8, A200 : #3939f5, A400 : #0000fb, A700 : #0000e1, contrast: ( 50 : #000000, 100 : #000000, 200 : #000000, 300 : #ffffff, 400 : #ffffff, 500 : #ffffff, 600 : #ffffff, 700 : #ffffff, 800 : #ffffff, 900 : #ffffff, A100 : #ffffff, A200 : #ffffff, A400 : #ffffff, A700 : #ffffff, ) );
+
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$MobyWEB-primary: mat-palette($mat-indigo);
-$MobyWEB-accent: mat-palette($mat-pink, A200, A100, A400);
-
+$MobyWEB-primary: mat-palette($md-palettetestsecu,50); //grey
+$MobyWEB-secondary: mat-palette($md-palettetestsecu,400);//blue
+$MobyWEB-text: mat-palette($md-palettetestsecu,200);//lightgrey
+$MobyWEB-validate: mat-palette($md-palettetestsecu,100);//green
 // The warn palette is optional (defaults to red).
-$MobyWEB-warn: mat-palette($mat-red);
+$MobyWEB-warn: mat-palette($md-palettetestsecu,300);//red
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
 $MobyWEB-theme: mat-light-theme((
   color: (
     primary: $MobyWEB-primary,
-    accent: $MobyWEB-accent,
+    accent: $MobyWEB-text,
     warn: $MobyWEB-warn,
   )
 ));
