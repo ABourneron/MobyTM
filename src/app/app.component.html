@@ -3,39 +3,24 @@
   <mat-sidenav-content>
     <mat-toolbar color="primary">
       <a routerLink="/">
-        <img src="/assets/img/MobyWEB.svg" width="40" height="40" />
+        <img src="/assets/img/MobyWEB.svg" width="40" height="40"/>
         <span style="margin-left: 20px; ">MobyWEB™</span>
       </a>
 
       <span class="example-spacer"></span>
-      <button mat-icon-button color="accent" class="material-icons" aria-label="Example icon-button with menu icon" routerLink="/connexion"
-              routerLinkActive="active" (click)="opened=!opened">
-        <mat-icon>account_circle</mat-icon>
-      </button>
+      <div *ngIf="isAuth===true; then thenBlock else elseBlock"></div>
+      <ng-template #thenBlock>
+        <button mat-icon-button class="material-icons" aria-label="Example icon-button with menu icon"
+          routerLinkActive="active" (click)="opened=!opened" color="accent">
+          <mat-icon>account_circle</mat-icon>
+        </button>
+      </ng-template>
+      <ng-template #elseBlock>
+        <button mat-flat-button routerLink="/connexion" routerLinkActive="active">Connexion </button>
+        <button mat-flat-button style="margin-left: 20px; ">Création compte</button>
+      </ng-template>
     </mat-toolbar>
+    <br>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
-
-<mat-toolbar color="primary">
-  <a routerLink="/">
-    <img src="/assets/img/MobyWEB.svg" width="40" height="40" />
-    <span style="margin-left: 20px; ">MobyWEB™</span>
-  </a>
-
-  <span class="example-spacer"></span>
-  <div *ngIf="isAuth===true; then thenBlock else elseBlock"></div>
-  <ng-template #thenBlock>
-    <button mat-icon-button class="material-icons" aria-label="Example icon-button with menu icon">
-    <mat-icon>account_circle</mat-icon> </button>
-  </ng-template>
-  <ng-template #elseBlock>
-    <button mat-flat-button routerLink="/connexion" routerLinkActive="active">Connexion </button>
-    <button mat-flat-button style="margin-left: 20px; ">Création compte</button>
-
-  </ng-template>
-
-</mat-toolbar>
-
-<br><br>
-<router-outlet></router-outlet>
