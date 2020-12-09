@@ -4,3 +4,16 @@ a {
     color:rgb(255, 255, 255);
 
 }
+
+mat-sidenav-container {
+  height: 100%;
+}
+
+mat-sidenav, mat-side-nav {
+  padding: 16px;
+}
+
+mat-sidenav {
+  background-color: #DADEFF;
+  width: 300px;
+}
