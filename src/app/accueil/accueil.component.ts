@@ -27,7 +27,7 @@ export class AccueilComponent implements OnInit {
     },
     {
       name: 'Solex',
-      status: 'Disponible',
+      status: 'En attente',
       desc: "Le classique, avec une belle odeur d'essence pour aller chercher le pain.",
       price: '10€/j'
     }
