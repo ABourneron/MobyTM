@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  isAuth = true;
+  isAuth = false;
 
   constructor() {
   }
