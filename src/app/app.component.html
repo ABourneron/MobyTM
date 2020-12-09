@@ -3,14 +3,18 @@
     <img src="/assets/img/MobyWEB.svg" width="40" height="40" />
     <span style="margin-left: 20px; ">MobyWEB™</span>
   </a>
-  
-
-
 
   <span class="example-spacer"></span>
-  <button mat-icon-button class="material-icons" aria-label="Example icon-button with menu icon" routerLink="/connexion"
-    routerLinkActive="active">
-    <mat-icon>account_circle</mat-icon>
-  </button>
+  <div *ngIf="isAuth===true; then thenBlock else elseBlock"></div>
+  <ng-template #thenBlock>
+    <button mat-icon-button class="material-icons" aria-label="Example icon-button with menu icon">
+    <mat-icon>account_circle</mat-icon> </button>
+  </ng-template>
+  <ng-template #elseBlock>
+    <button mat-flat-button routerLink="/connexion" routerLinkActive="active">Connexion </button>
+    <button mat-flat-button style="margin-left: 20px; ">Création compte</button>
+
+  </ng-template>
+
 </mat-toolbar>
 <router-outlet></router-outlet>

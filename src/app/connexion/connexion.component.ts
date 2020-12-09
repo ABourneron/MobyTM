@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-connexion',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConnexionComponent implements OnInit {
 
+
   constructor() { }
 
   ngOnInit(): void {
   }
+  
 
 }
