@@ -1,4 +1,3 @@
-
 <mat-sidenav-container>
   <mat-sidenav #right position="end" [(opened)]="opened"></mat-sidenav>
   <mat-sidenav-content>
@@ -18,3 +17,25 @@
   </mat-sidenav-content>
 </mat-sidenav-container>
 
+<mat-toolbar color="primary">
+  <a routerLink="/">
+    <img src="/assets/img/MobyWEB.svg" width="40" height="40" />
+    <span style="margin-left: 20px; ">MobyWEB™</span>
+  </a>
+
+  <span class="example-spacer"></span>
+  <div *ngIf="isAuth===true; then thenBlock else elseBlock"></div>
+  <ng-template #thenBlock>
+    <button mat-icon-button class="material-icons" aria-label="Example icon-button with menu icon">
+    <mat-icon>account_circle</mat-icon> </button>
+  </ng-template>
+  <ng-template #elseBlock>
+    <button mat-flat-button routerLink="/connexion" routerLinkActive="active">Connexion </button>
+    <button mat-flat-button style="margin-left: 20px; ">Création compte</button>
+
+  </ng-template>
+
+</mat-toolbar>
+
+<br><br>
+<router-outlet></router-outlet>

@@ -19,10 +19,13 @@ export class AppComponent {
 
   opened = false;
 
-  
-
 
   constructor() {
+  }
+
+  public setAuth(state:boolean)
+  {
+    this.isAuth=state;
   }
 
 }
