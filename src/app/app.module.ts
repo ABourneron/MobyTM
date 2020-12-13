@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { MobComponent } from './mob/mob.component';
 import { FicheComponent } from './fiche/fiche.component';
 import { ConnexionComponent } from './connexion/connexion.component';
+import { AccueilComponent } from './accueil/accueil.component'; 
 import { Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -15,7 +16,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { MatInputModule } from '@angular/material/input';
-import { AccueilComponent } from './accueil/accueil.component'; 
+import {MatGridListModule} from '@angular/material/grid-list'; 
 
 
 const appRoutes: Routes = [
@@ -43,7 +44,8 @@ const appRoutes: Routes = [
     MatIconModule,
     MatButtonModule,
     MatSidenavModule,
-    MatInputModule
+    MatInputModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

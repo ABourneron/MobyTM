@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  isAuth = true;
+  isAuth = false;
   lastUpdate = new Promise((resolve, reject) => {
     const date = new Date();
     setTimeout(
@@ -23,9 +23,8 @@ export class AppComponent {
   constructor() {
   }
 
-  public setAuth(state:boolean)
-  {
-    this.isAuth=state;
+  public setAuth(state: boolean) {
+    this.isAuth = state;
   }
 
 }

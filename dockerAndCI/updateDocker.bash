@@ -7,7 +7,7 @@ ssh ubuntu@51.38.185.67 << EOF
 sleep 1
 docker stop MobyWeb
 docker rm MobyWeb
-docker rmi $(docker images -q)
+docker image prune -a -f
 sleep 1
 docker run -d -p=80:80 --name=MobyWeb registry.gitlab.com/abourneron/mobytm:latest
 exit

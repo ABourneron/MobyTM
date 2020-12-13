@@ -25,11 +25,11 @@ export class AccueilComponent implements OnInit {
       desc: 'Le grand classique.',
       price: '10€/j'
     },
-    {
-      name: 'Solex',
-      status: 'En attente',
-      desc: "Le classique, avec une belle odeur d'essence pour aller chercher le pain.",
-      price: '10€/j'
+     {
+       name: 'Solex',
+       status: 'En attente',
+       desc: "Le classique, avec une belle odeur d'essence pour aller chercher le pain.",
+       price: '10€/j'
     }
   ];
   constructor() { }

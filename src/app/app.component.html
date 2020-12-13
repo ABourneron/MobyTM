@@ -1,24 +1,42 @@
 <mat-sidenav-container>
-  <mat-sidenav #right position="end" [(opened)]="opened"></mat-sidenav>
+  <mat-sidenav #right position="end" [(opened)]="opened">
+    <div *ngIf="isAuth===true; then thenBlock else elseBlock"></div>
+    <!-- USER CONNECTE -->
+    <ng-template #thenBlock>
+      <h1 style="text-align: center;">Bienvenue [USER]</h1>
+      <div style="justify-content: center; display: flex; margin-top: 10px;">
+        <button mat-flat-button style="width: 80%;">Mon compte</button>
+      </div>
+      <div style="justify-content: center; display: flex; margin-top: 10px;">
+        <button mat-flat-button style="width: 80%;">Mes mobylettes</button>
+      </div>
+      <div style="justify-content: center; display: flex;  margin-top: 10px;">
+        <button mat-flat-button style="width: 80%;"color="warn">Déconnexion</button>
+      </div>
+    </ng-template>
+    <!-- USER NON CONNECTE -->
+    <ng-template #elseBlock>
+      <div style="justify-content: center; display: flex; margin-top: 10px;">
+        <button mat-flat-button routerLink="/connexion" routerLinkActive="active" style="width: 80%;">Connexion </button>
+      </div>
+      <div style="justify-content: center; display: flex; margin-top: 10px;">
+        <button mat-flat-button style="width: 80%;">Création compte</button>
+      </div>
+    </ng-template>
+  </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
       <a routerLink="/">
-        <img src="/assets/img/MobyWEB.svg" width="40" height="40"/>
+        <img src="/assets/img/MobyWEB.svg" width="40" height="40" />
         <span style="margin-left: 20px; ">MobyWEB™</span>
       </a>
 
+
       <span class="example-spacer"></span>
-      <div *ngIf="isAuth===true; then thenBlock else elseBlock"></div>
-      <ng-template #thenBlock>
-        <button mat-icon-button class="material-icons" aria-label="Example icon-button with menu icon"
-          routerLinkActive="active" (click)="opened=!opened" color="accent">
-          <mat-icon>account_circle</mat-icon>
-        </button>
-      </ng-template>
-      <ng-template #elseBlock>
-        <button mat-flat-button routerLink="/connexion" routerLinkActive="active">Connexion </button>
-        <button mat-flat-button style="margin-left: 20px; ">Création compte</button>
-      </ng-template>
+      <button mat-icon-button class="material-icons" aria-label="Example icon-button with menu icon"
+        routerLinkActive="active" (click)="opened=!opened" color="accent">
+        <mat-icon>account_circle</mat-icon>
+      </button>
     </mat-toolbar>
     <br>
     <router-outlet></router-outlet>
