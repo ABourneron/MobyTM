@@ -23,7 +23,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 
 const appRoutes: Routes = [
   { path: '', component: MobComponent },
-  { path: 'fiche', component: FicheComponent },
+  { path: 'fiche/:id', component: FicheComponent },
   { path: 'connexion', component: ConnexionComponent },
 ];
 

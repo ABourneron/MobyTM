@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class MobComponent implements OnInit {
 
+  @Input() mobId: string = "5fdb3fd841c7532387f9e143";
   @Input() mobName: string = "";
   @Input() mobStatus: string = "";
   @Input() mobDesc: string = "";

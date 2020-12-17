@@ -10,7 +10,6 @@ import { ApiService, mobs } from '../api.service';
 export class AccueilComponent implements OnInit {
 
   mobylettes: mobs[] = [];
-  //mobylettes = [];
 
   constructor(
     private api: ApiService ){ }
@@ -22,7 +21,6 @@ export class AccueilComponent implements OnInit {
   getMobs(): void {
     this.api.getMobs().subscribe((resp: any) => {
       this.mobylettes = resp;
-      console.log(this.mobylettes);
     });
   }
 
