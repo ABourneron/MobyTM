@@ -1,40 +1,29 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService, mobs } from '../api.service';
 
 @Component({
   selector: 'app-accueil',
   templateUrl: './accueil.component.html',
   styleUrls: ['./accueil.component.scss']
 })
+
 export class AccueilComponent implements OnInit {
-  mobs = [
-    {
-      name: 'Peugeot BB',
-      status: 'Indisponible',
-      desc: 'La plus belle des mobs.',
-      price: '10€/j'
-    },
-    {
-      name: 'AV88',
-      status: 'Disponible',
-      desc: 'Pas mal aussi, surtout avec le vernis.',
-      price: '10€/j'
-    },
-    {
-      name: 'Peugeot 103',
-      status: 'Disponible',
-      desc: 'Le grand classique.',
-      price: '10€/j'
-    },
-     {
-       name: 'Solex',
-       status: 'En attente',
-       desc: "Le classique, avec une belle odeur d'essence pour aller chercher le pain.",
-       price: '10€/j'
-    }
-  ];
-  constructor() { }
+
+  mobylettes: mobs[] = [];
+  //mobylettes = [];
+
+  constructor(
+    private api: ApiService ){ }
 
   ngOnInit(): void {
+    this.getMobs();
+  }
+
+  getMobs(): void {
+    this.api.getMobs().subscribe((resp: any) => {
+      this.mobylettes = resp;
+      console.log(this.mobylettes);
+    });
   }
 
 }
