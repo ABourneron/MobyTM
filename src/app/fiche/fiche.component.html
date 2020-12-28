@@ -1,14 +1,14 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1>{{ mobylettes.name }} </h1>
+            <h1>{{mobylette.name}}</h1>
         </div>
         <div class="col text-right">
             <h2><span class="badge" [ngClass]="{
-            'badge-danger':   mobylettes.status === 'Indisponible',
-            'badge-success':  mobylettes.status === 'Disponible',
-            'badge-default':  mobylettes.status === 'En attente' }">
-                    {{ mobylettes.status }}</span></h2>
+                'badge-danger':   mobylette.status==='Indisponible' , 
+                'badge-success' : mobylette.status==='Disponible' , 
+                'badge-default' : mobylette.status==='En attente' }">
+                    {{mobylette.status}}</span></h2>
         </div>
     </div>
 
@@ -20,13 +20,11 @@
         </div>
         <div class="col">
             <div class="row ">
-                <h1>{{ mobylettes.price }}</h1>
+                <h1>{{ mobylette.price }}</h1>
             </div>
             <div class="row">
-                <h2> {{ mobylettes.desc }}</h2>
+                <h2> {{ mobylette.desc }}</h2>
             </div>
         </div>
     </div>
 </div>
-
-

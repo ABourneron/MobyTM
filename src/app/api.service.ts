@@ -28,28 +28,12 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  private handleError(error: HttpErrorResponse): any {
-    if (error.error instanceof ErrorEvent) {
-      console.error('An error occurred:', error.error.message);
-    } else {
-      console.error(
-        `Backend returned code ${error.status}, ` +
-        `body was: ${error.error}`);
-    }
-    return throwError(
-      'Something bad happened; please try again later.');
+  public getMobs(): Observable<mobs> {
+    return this.http.get<mobs>(endpoint + 'mobs',optionRequete)
   }
 
-  getMobs(): Observable<any> {
-    return this.http.get<mobs>(endpoint + 'mobs',optionRequete).pipe(
-      catchError(this.handleError)
-    );
-  }
-
-  getMob(id: string): Observable<any> {
-    return this.http.get<mobs>(endpoint + 'mob/' + id, optionRequete).pipe(
-      catchError(this.handleError)
-    );
+  public getMob(id: string): Observable<mobs> {
+    return this.http.get<mobs>(endpoint + 'mob/' + id, optionRequete)
   }
 }
 

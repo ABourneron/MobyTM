@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ApiService, mobs } from '../api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -9,21 +9,23 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./fiche.component.scss']
 })
 
+
 export class FicheComponent implements OnInit {
+  mobylette: mobs[] = [];
+ 
+  constructor(private api: ApiService, private route: ActivatedRoute, ) { 
 
-  mobylettes: mobs = { _id: '', name: '', desc: '', price: "", status: '' };
+    this.api.getMob(this.route.snapshot.params['id']).subscribe((resp: any) => {
+      this.mobylette = resp[0];
+      
+    });
 
-  constructor(private api: ApiService, private route: ActivatedRoute, private router: Router) { }
-
-  ngOnInit(): void {
-    console.log(this.route.snapshot.params.id);
-
-    this.api.getMob(this.route.snapshot.params.id).subscribe(
-      (data: mobs) => this.mobylettes = { ...data }
-    );
-    console.log(this.mobylettes);
+    
+    
   }
 
+  ngOnInit() {
+  }
 
 }
 

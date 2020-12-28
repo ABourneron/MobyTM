@@ -2,7 +2,7 @@
     <h1>Les mobylettes</h1>
     <div class="card-deck row-cols-md-3">
         <app-mob *ngFor="let mobylettes of mobylettes" [mobName]="mobylettes.name" [mobStatus]="mobylettes.status" 
-        [mobDesc]="mobylettes.desc" [mobPrice]="mobylettes.price">
+        [mobDesc]="mobylettes.desc" [mobPrice]="mobylettes.price" [mobId]="mobylettes._id">
         </app-mob>
     </div>
 </div>

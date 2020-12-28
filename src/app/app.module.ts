@@ -8,7 +8,7 @@ import { MobComponent } from './mob/mob.component';
 import { FicheComponent } from './fiche/fiche.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { AccueilComponent } from './accueil/accueil.component';
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
@@ -49,7 +49,8 @@ const appRoutes: Routes = [
     MatInputModule,
     MatGridListModule,
     HttpClientModule,
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
