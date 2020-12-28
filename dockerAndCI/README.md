@@ -77,11 +77,14 @@ docker exec -ti [ID] /bin/bash
 
 ### Pour mettre à jour l'image
 ```bash
-#Arrêter une image : 
+#Arrêter un conteneur : 
 sudo docker stop [ID]
 
-#Supprimer une image :
+#Supprimer un conteneur :
 sudo docker rm [nom]
+
+#Supprimer une image :
+sudo docker image rm [NOM]
 
 #NOTE : sudo docker rm [ID] fonctionne aussi
 
