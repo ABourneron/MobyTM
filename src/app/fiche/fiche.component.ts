@@ -11,8 +11,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 
 export class FicheComponent implements OnInit {
-  mobylette: mobs[] = [];
- 
+  mobylette: mobs = {_id:"", name:"", price:"", desc:"", status:""};
+
   constructor(private api: ApiService, private route: ActivatedRoute, ) { 
 
     this.api.getMob(this.route.snapshot.params['id']).subscribe((resp: any) => {
