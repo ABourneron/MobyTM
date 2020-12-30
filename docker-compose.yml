@@ -1,14 +1,16 @@
 version: '3'
 
 services:
-  node:
+  api:
     image: registry.gitlab.com/abourneron/mobytm-backend-api:latest 
     ports:
       - "8081:3000"
-    links:
+    depends_on:
       - mongo
     environment:
-      - URL_MONGO=mongodb://mongo:27080
+      - URL_MONGO=mongodb://mongo:27080/
+    links:
+      - mongo
 
   mongo:
     image: registry.gitlab.com/abourneron/mobytm-backend-mongo:latest
@@ -16,4 +18,9 @@ services:
       - "./mongo/data:/data/db"
     ports:
       - "27080:27017"
+
+  front:
+    image: registry.gitlab.com/abourneron/mobytm:latest
+    ports:
+      - "80:80"
 
