@@ -1,0 +1,23 @@
+<div class="card mb-3">
+    <img class="card-img-top"
+        src="/assets/img/mobs/{{mobId}}.jpg"
+        alt="Erreur iamge">
+    <div class="card-body">
+        <h2>{{ mobName }}</h2>
+        <p>{{ mobDesc}}</p>
+
+        <div class="row">
+            <div class="col">
+                <h4><span class="badge" [ngClass]="{
+                        'badge-danger':   mobStatus === 'Indisponible',
+                        'badge-success':  mobStatus === 'Disponible',
+                        'badge-default':  mobStatus === 'En attente' }">
+                    {{ mobStatus }}</span></h4>
+            </div>
+            <h4>
+                <span class="card-text font-weight-bold">{{ mobPrice}}</span>
+            </h4>
+        </div>
+    </div>
+    <button mat-raised-button color="blue" routerLink="/fiche/{{mobId}}" routerLinkActive="active">Réserver</button>
+</div>

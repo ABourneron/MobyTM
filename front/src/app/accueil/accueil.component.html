@@ -1,0 +1,10 @@
+<div class="container">
+    <h1>Les mobylettes</h1>
+    <div class="row equal"> 
+        <div class="card-deck row-cols-md-3 d-flex">
+            <app-mob *ngFor="let mobylettes of mobylettes" [mobName]="mobylettes.name" [mobStatus]="mobylettes.status"
+                [mobDesc]="mobylettes.desc" [mobPrice]="mobylettes.price" [mobId]="mobylettes._id">
+            </app-mob>
+        </div>
+    </div>
+</div>
