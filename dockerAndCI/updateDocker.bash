@@ -1,14 +1,20 @@
 #!/usr/bin
+cd ../front
 ng build
-docker build -t registry.gitlab.com/abourneron/mobytm --label "MobyWeb" .
-docker push registry.gitlab.com/abourneron/mobytm
+docker build -t registry.gitlab.com/abourneron/mobytm/front --label "MobyWebFront" .
+docker push registry.gitlab.com/abourneron/mobytm/front
+
+cd ../api
+docker build -t registry.gitlab.com/abourneron/mobytm/back/api --label "MobyWebAPI" .
+docker push registry.gitlab.com/abourneron/mobytm/back/api
+
+scp ../docker-compose.yml ubuntu@51.38.185.67:/home/ubuntu
 
 ssh ubuntu@51.38.185.67 << EOF
 sleep 1
-docker stop MobyWeb
-docker rm MobyWeb
+docker-compose down
 docker image prune -a -f
 sleep 1
-docker run -d -p=80:80 --name=MobyWeb registry.gitlab.com/abourneron/mobytm:latest
+docker-compose up -d
 exit
 EOF

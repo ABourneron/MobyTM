@@ -18,17 +18,6 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// Cross Origin middleware
-// app.use(function(req, res, next) {
-//   res.header("Access-Control-Allow-Origin", "*");
-//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
-//   res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
-//   next();
-// });
-
-//app.use(cors());
-
-
 var mongoose = require('mongoose');
 mongoose.connect(url, function(err) {
   console.log("Database connection ok");
@@ -69,7 +58,6 @@ app.get('/api/mobs', function (req, res) {
   mobsModel.find(null, function (err, comms) {
     if (err) { throw err; }
     res.send(comms);
-    console.log("API OK");
   });
 });
 

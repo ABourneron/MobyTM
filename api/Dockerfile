@@ -18,4 +18,5 @@ RUN npm ci --only=production
 COPY . .
 
 EXPOSE 3000
+RUN sleep 10;
 CMD [ "node", "app.js" ]
