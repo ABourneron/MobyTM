@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "admin-mongo": "0.0.23",
+    "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "mongodb": "^3.6.3",
     "mongoose": "^5.11.9"

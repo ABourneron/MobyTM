@@ -47,3 +47,6 @@ Thumbs.db
 
 /api/node_modules
 /mongo/data
+/front/dist
+
+.gitignore

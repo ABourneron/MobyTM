@@ -17,6 +17,7 @@ export class AccueilComponent implements OnInit {
   ngOnInit(): void {
     this.getMobs();
   }
+  
 
   getMobs(): void {
     this.api.getMobs().subscribe((resp: any) => {

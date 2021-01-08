@@ -4,7 +4,7 @@ import { catchError } from 'rxjs/internal/operators';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 
-const endpoint = 'http://mongo:8081/api/';
+const endpoint = 'http://pt.ts.abourneron.fr:8081/api/';
 
 const optionRequete = {
   headers: new HttpHeaders({ 
@@ -26,7 +26,8 @@ export interface mobs {
 
 export class ApiService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+  }
 
   public getMobs(): Observable<mobs> {
     return this.http.get<mobs>(endpoint + 'mobs',optionRequete)
